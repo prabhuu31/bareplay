@@ -1,0 +1,28 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.mat-drawer-content {
+  height: 800px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.is-active, .mat-nav-list a:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+.mat-icon-logo {
+  padding: 20px;
+  width: 100px;
+  margin-top: 0px;
+  background-color: rgba(255, 204, 0, 1);
+}

@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/_theming.scss';
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+.app-theme1-theme {
+    $my-app-primary: mat-palette($mat-grey, 100);
+    $my-app-accent: mat-palette($mat-grey, 500);
+    $my-app-warn: mat-palette($mat-grey, 900);
+    $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+    @include angular-material-theme($my-app-theme);
+}
+.app-theme2-theme {
+    $alternate-primary: mat-palette($mat-indigo, 100);
+    $alternate-accent: mat-palette($mat-indigo, 500);
+    $alternate-warn: mat-palette($mat-indigo, 900);
+    $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent, $alternate-warn);
+    @include angular-material-theme($alternate-theme);
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.chartContainer canvas {
+    max-height: 250px;
+    width: auto;
+}
+
+.chartContainer{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+$horizontal-gradient-background: linear-gradient(
+  to right,
+  rgba(255, 204, 0, 1) 0%,
+  rgba(255, 204, 0, 1) 47%, 
+  rgba(255, 204, 0, 0) 100%
+);
+
+.mat-toolbar.mat-primary {
+    background: $horizontal-gradient-background;
+    color: #d40511;
+}
+
+/* dashboard global css*/
+.grid-container {
+    margin: 0px;
+  }
+  
+  .dashboard-card {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+  
+  .more-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+  
+  .dashboard-card-content {
+    text-align: center;
+  }
+  
