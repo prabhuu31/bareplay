@@ -1,35 +1,18 @@
 ---
    - hosts: localhost
-     tasks:
-       - name: Clone a github repository
-         git:
-          repo: https://github.com/prabhuu31/monitor.git
-          dest: /home/prabhu/gitansi
-          
-          
-          
-          clone: yes
-          update: yes
-      
-       - name: Install packages 
-         shell: npm install
-         
-
-           
-           
-       - name: Build
-         shell: ng build
-         
- 
-           
-     
-       - name: test
-         shell: pm2 start "ng test"
-         
- 
-           
-       - name: run
-         shell: pm2 start "ng serve"
-         
-               
-...             
+     build:
+  stage: build
+  image: node:latest
+  only:
+    - master
+  script:
+    - npm install -g @angular/cli@9.1.0
+    - npm install
+    - ng build 
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 2 hours
+  cache:
+    paths:
+      - node_modules/
