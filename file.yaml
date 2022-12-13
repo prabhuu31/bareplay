@@ -7,10 +7,10 @@
          
    - name: Build
      shell: pwd
-                cd Documents/dashboard-monitor-master
-                ls
-                npm install
-                ng build
+            cd Documents/dashboard-monitor-master
+            ls
+            npm install
+            ng build
          
      
    - name: test
