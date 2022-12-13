@@ -3,7 +3,7 @@
      tasks:
       
        - name: Install packages 
-         shell: npm install
+         shell: sudo npm install
          
          
        - name: Build
