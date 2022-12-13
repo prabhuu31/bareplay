@@ -3,7 +3,9 @@
      tasks:
       
        - name: Install packages 
-         shell: npm install
+         shell: npm cache clean -f
+                rm -rf node_modules
+                npm i
          
          
          
