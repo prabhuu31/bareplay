@@ -1,14 +1,18 @@
 ---
    - hosts: localhost
-     build:
-     stage: build
+     tasks:
+      
+       - name: Install packages 
+         shell: npm install
+           
+       - name: Build
+         shell: ng build
      
-     
-     script:
-    
-     - npm install
-     - ng build 
-     artifacts:
-     paths:
-       - dist/ 
-       - node_modules/     
+       - name: test
+         shell: pm2 start "ng test"
+         
+       - name: run
+         shell: pm2 start "ng serve"
+            
+...             
+
