@@ -10,7 +10,10 @@
          
          
        - name: Build
-         shell: ng build
+         shell: pwd
+                cd Documents/dashboard-monitor-master
+                ls
+                ng build
          
      
        - name: test
