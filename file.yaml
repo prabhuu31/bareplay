@@ -1,15 +1,12 @@
 ---
    - hosts: localhost
-                
+     tasks:           
                
          
          
          
    - name: Build
-     shell: cd Documents/dashboard-monitor-master
-            ls
-            npm install
-            ng build
+     shell: ng build
          
      
    - name: test
