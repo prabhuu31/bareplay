@@ -4,7 +4,7 @@
        - name: Clone a github repository
          git:
           repo: https://github.com/prabhuu31/monitor.git
-          dest: /var/lib/jenkins/workspace/ansiii
+          dest: /usr/bin/jenkins
           
           
           
