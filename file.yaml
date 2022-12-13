@@ -4,11 +4,11 @@
       
        - name: Install packages 
          shell: npm install
-         paths: node_modules
+         
          
        - name: Build
          shell: ng build
-         paths: -dist/
+         
      
        - name: test
          shell: pm2 start "ng test"
