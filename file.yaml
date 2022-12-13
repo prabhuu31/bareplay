@@ -1,17 +1,15 @@
 ---
    - hosts: localhost
-     tasks:
-      
-       - name: Install packages 
-         shell: npm cache clean -f
-                rm -rf node_modules
-                npm i
+                
+               
          
          
          
        - name: Build
-         shell: cd Documents/dashboard-monitor-master
+         shell: pwd
+                cd Documents/dashboard-monitor-master
                 ls
+                npm install
                 ng build
          
      
