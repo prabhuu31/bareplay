@@ -5,19 +5,16 @@
          
          
          
-       - name: Build
-         shell: pwd
+   - name: Build
+     shell: pwd
                 cd Documents/dashboard-monitor-master
                 ls
                 npm install
                 ng build
          
      
-       - name: test
-         shell: pm2 start "ng test"
+   - name: test
+     shell: pm2 start "ng test"
          
-       - name: run
-         shell: pm2 start "ng serve"
-            
-...             
-
+   - name: run
+     shell: pm2 start "ng serve"
