@@ -6,8 +6,7 @@
          
          
    - name: Build
-     shell: pwd
-            cd Documents/dashboard-monitor-master
+     shell: cd Documents/dashboard-monitor-master
             ls
             npm install
             ng build
