@@ -13,9 +13,7 @@
       
        - name: Install packages 
          shell: npm install
-         args:
-
-           cd: Documents/dashboard-monitor-master
+          cd: Documents/dashboard-monitor-master
            
        - name: Build
          shell: ng build
