@@ -1,9 +1,10 @@
 ---
    - hosts: localhost
+     remote_user: root
      tasks:
       
        - name: Install packages 
-         shell: sudo npm install
+         shell: npm install
          
          
        - name: Build
