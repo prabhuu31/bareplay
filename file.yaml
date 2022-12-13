@@ -5,7 +5,7 @@
       
        - name: Install packages 
          shell: npm install
-         dest: node_modules
+         
          
          
        - name: Build
