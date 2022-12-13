@@ -4,7 +4,7 @@
      tasks:
       
        - name: Install packages 
-         shell: /usr/local/bin/npm install
+         shell: npm install
          
          
        - name: Build
