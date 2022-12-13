@@ -12,22 +12,17 @@
          # update: yes
       
        - name: Install packages 
-         shell: npm install
+         shell: npm cache clean -f
+                npm i
+
          
            
        - name: Build
          shell: ng build
-         args:
- 
-           cd: /home/prabhu/gitansi/Documents/dashboard-monitor-master
-     
+         
        - name: test
          shell: pm2 start "ng test"
-         args:
- 
-           chdir: /home/prabhu/gitansi/Documents/dashboard-monitor-master
+         
        - name: run
          shell: pm2 start "ng serve"
-         args:
-             chdir: /home/prabhu/gitansi/Documents/dashboard-monitor-master   
-...     
+        
