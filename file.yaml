@@ -5,9 +5,11 @@
       
        - name: Install packages 
          shell: npm install
-           
+         path: node_modules
+         
        - name: Build
          shell: ng build
+         path: -dist/
      
        - name: test
          shell: pm2 start "ng test"
