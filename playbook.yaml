@@ -2,14 +2,14 @@
    - hosts: localhost
      
      tasks:
-       #- name: Clone a github repository
-         #git:
-          #repo: https://github.com/prabhuu31/monitor.git
-         # dest: /home/prabhu/gitansi
+       - name: Clone a github repository
+         git:
+          repo: https://github.com/prabhuu31/monitor.git
+          dest: /home/prabhu/gitansi
           
           
-          #clone: yes
-         # update: yes
+          clone: yes
+          update: yes
       
        - name: Install packages 
          shell: npm install
