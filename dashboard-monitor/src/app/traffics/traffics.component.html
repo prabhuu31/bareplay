@@ -1,0 +1,31 @@
+<!-- dashboard.component.html -->
+<div class="grid-container" >
+    <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="240px">
+     
+      <!--Charts-->
+      <mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols" 
+      [rowspan]="( cardLayout | async )?.chart?.rows">
+        <app-card title="Online users traffic" (loadDataChart)='loadUserData($event)'>
+          <app-loggedin-chart #userChart></app-loggedin-chart>
+        </app-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols" 
+      [rowspan]="( cardLayout | async )?.chart?.rows">
+        <app-card title="Transcation traffic" (loadDataChart)='loadTransactionData($event)' >
+          <app-transactions-chart #transactionChart></app-transactions-chart>
+        </app-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols" 
+    [rowspan]="( cardLayout | async )?.chart?.rows">
+      <app-card title="Intermodule Communication traffic" (loadDataChart)='loadTransactionData($event)' >
+        <app-intermodule-comm #intermoduleChart></app-intermodule-comm>
+      </app-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols" 
+    [rowspan]="( cardLayout | async )?.chart?.rows">
+      <app-card title="Exceptions traffic" (loadDataChart)='loadTransactionData($event)' >
+        <app-errors #ErrorChart></app-errors>
+      </app-card>
+    </mat-grid-tile>
+    </mat-grid-list>
+   </div>

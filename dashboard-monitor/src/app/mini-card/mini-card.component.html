@@ -1,0 +1,45 @@
+<mat-card class="dashboard-card">    
+        <mat-icon [color]="color" >{{icon}}</mat-icon>
+        <h2 class="title-text">{{appName}}</h2>
+        <p class="difference-text"> 
+    <mat-chip-list>   
+        <table >
+            <tr>
+                <td align="left">
+                    Today's online users:
+                </td>
+                <td>
+                    <mat-chip color="warn" selected > {{totalUser}}</mat-chip>
+                </td>
+                <td>
+                    <span
+                        [ngClass]="{ 'green-text': isUserIncrease, 'red-text': !isUserIncrease }">
+                        {{ isUserIncrease ? '+' : '-' }}{{ userPercentValue | percent:'2.1-2' }}
+                        <mat-icon *ngIf="isUserIncrease">arrow_upward</mat-icon>
+                        <mat-icon *ngIf="!isUserIncrease">arrow_downward</mat-icon>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    Today's Transactions:
+                </td>
+                <td>
+                    <mat-chip color="primary" selected > {{totalTransaction}}</mat-chip>
+                </td>
+                <td>
+                    <span
+                        [ngClass]="{ 'green-text': isTransactionIncrease, 'red-text': !isTransactionIncrease }">
+                        {{ isTransactionIncrease ? '+' : '-' }}{{ transactionPercentValue | percent:'2.1-2' }}
+                        <mat-icon *ngIf="isTransactionIncrease">arrow_upward</mat-icon>
+                        <mat-icon *ngIf="!isTransactionIncrease">arrow_downward</mat-icon>
+                    </span>
+                </td>
+            </tr>
+        </table>         
+    </mat-chip-list>
+        </p>
+    <p class="difference-text">        
+        <span class="duration">{{duration}}</span>
+    </p>
+</mat-card>

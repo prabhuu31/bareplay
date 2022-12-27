@@ -1,0 +1,19 @@
+<!--card.component.html-->
+<mat-card class="dashboard-card">
+    <mat-card-header>
+        <mat-card-title>
+            {{title}}
+            <mat-form-field appearance="fill"  class="mat-form-field-wrapper-new">
+                <mat-label>Select Year</mat-label>
+                <mat-select id="periodDropDown" [(value)]="selectedPeriod" (selectionChange)="loadData($event)">
+                  <mat-option  *ngFor="let period of period" [value]="period" >
+                    {{period}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="dashboard-card-content">
+        <ng-content></ng-content>
+    </mat-card-content>
+ </mat-card>

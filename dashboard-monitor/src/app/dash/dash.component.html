@@ -1,0 +1,30 @@
+<!-- dashboard.component.html -->
+<div class="grid-container" >
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="240px">
+    <!--Mini Cards-->
+    <mat-grid-tile *ngFor="let mc of miniCardData" [colspan]="( cardLayout | async )?.miniCard?.cols"
+      [rowspan]="( cardLayout | async )?.miniCard?.rows">
+
+        <app-mini-card [appName]="mc.appName" [icon]="mc.icon" [totalUser]="mc.totalUser" 
+        [totalTransaction]="mc.totalTransaction" [color]="mc.color" [isUserIncrease]="mc.isUserIncrease"
+        [isTransactionIncrease]="mc.isTransactionIncrease" duration="since last month" 
+        [userPercentValue]="mc.userPercentValue" [transactionPercentValue]="mc.transactionPercentValue">
+        </app-mini-card>
+   
+    </mat-grid-tile>
+    
+    <!--Charts-->
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols" 
+    [rowspan]="( cardLayout | async )?.chart?.rows">
+      <app-card title="Online users traffic" (loadDataChart)='loadUserData($event)'>
+        <app-loggedin-chart #userChart></app-loggedin-chart>
+      </app-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols" 
+    [rowspan]="( cardLayout | async )?.chart?.rows">
+      <app-card title="Transcation traffic" (loadDataChart)='loadTransactionData($event)' >
+        <app-transactions-chart #transactionChart></app-transactions-chart>
+      </app-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+ </div>
