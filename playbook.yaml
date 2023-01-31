@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+  vars:
+    repo_name: "bone"
+  tasks:
+  - name: Clone Git repository
+    git:
+      repo: "{{ git_repo }}"
+      dest: "{{repo_name}}"
+      version: "{{ git_version }}"
+      clone: yes
+      update: yes
+ 
+  - name: Installing Dependencies
+    shell: npm install 
+    args:
+      chdir: /home/prabhu/bone
+
+  - name: Build
+    shell: ng build   
+    args:
+      chdir: /home/prabhu/bone
+
+  - name: Deploy
+    shell: pm2 start "ng serve" 
+    args:
+      chdir: /home/prabhu/bone    
+
+  
